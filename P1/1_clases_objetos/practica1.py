@@ -23,4 +23,4 @@ class AreaRectangulo:
         self.area=base*altura
 
 rectangulo1=AreaRectangulo(5,10)
-print(f"el area del rectangulo1 es: {rectangulo1.area}")
+print(f"el area del rectangulo1 es: {rectangulo1.area}") 
