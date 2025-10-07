@@ -88,11 +88,46 @@ class Coches:
         self.__velocidad=self.__velocidad-decremento
         return self.__velocidad
 
-#
-coche1=Coches("VW","Blanco","2022",220,150,5)
-coche2=Coches("Nissan","Azul","2020",180,150,5)
-coche3=Coches("Honda","","",0,0,0)
+#Mulltiples objetos
+coche1=Coches()
+coche2=Coches()
+coche3=Coches()
+#Utiliza los metodos set para darle valores a las propiedades o atributos del objeto coche1
+coche1.setMarca("VW")
+coche1.setColor("Blanco")
+coche1.setModelo("2022")
+coche1.setVelocidad(220)
+coche1.setCaballaje(150)
+coche1.setPlazas(5)
+coche1.num_serie="123ABC"
 
+coche2.setMarca("Nissan")
+coche2.setColor("Azul")
+coche2.setModelo("2020")
+coche2.setVelocidad(180)
+coche2.setCaballaje(150)
+coche2.setPlazas(6)
+
+coche3.setMarca("Honda")
+
+#Utiliza los metodos get para obtener los valores de las propiedades o atributos del objeto coche1
+print(f'''
+Marca: {coche1.getMarca()}
+Color: {coche1.getColor()}
+Modelo: {coche1.getModelo()}
+Velocidad: {coche1.getVelocidad()}
+Caballaje: {coche1.getCaballaje()}
+Plazas: {coche1.getPlazas()}
+''')
+
+print(f'''
+Marca: {coche2.getMarca()}  
+Color: {coche2.getColor()}
+Modelo: {coche2.getModelo()}
+Velocidad: {coche2.getVelocidad()}
+Caballaje: {coche2.getCaballaje()}
+Plazas: {coche2.getPlazas()}
+''')
 
 
 """
@@ -144,4 +179,5 @@ print(coche2.get_info())
 print(coche3.get_info())
 
 """
+
 
