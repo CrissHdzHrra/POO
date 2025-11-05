@@ -1,7 +1,7 @@
 from tkinter import *
 
 def cambiarTexto():
-    label_nombre.config(text="Garcia Paez David Israel")
+    label_nombre.config(text="Crissssssssss")
     label_contrasena.config(text="1234")
 
 ventana = Tk()
