@@ -22,7 +22,7 @@ marco4.pack()
 marco4.pack_propagate(False)
 
 #Etiquetas o Labels
-etiqueta1 = Label(marco1, text="David Israel García Páez",bg="#FB3908").pack(pady=30)
+etiqueta1 = Label(marco1, text="Crisssssss",bg="#FB3908").pack(pady=30)
 etiqueta2 = Label(marco2, text="Universidad Tecnologica de Durango",bg="#08FBEF").pack(pady=30)
 etiqueta3 = Label(marco3, text="Tecnologias de la Informacion",bg="#08FB10").pack(pady=30)
 etiqueta4 = Label(marco4, text="Desarrollo de SW Multiplataforma",bg="#BA08FB").pack(pady=30)
