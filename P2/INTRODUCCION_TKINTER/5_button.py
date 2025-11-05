@@ -19,7 +19,7 @@ frame_principal.config(
 frame_principal.pack_propagate(False)
 frame_principal.pack(pady=10)
 
-label_titulo = Label(frame_principal, text="Inicio de Secion")
+label_titulo = Label(frame_principal, text="Inicio de Sesion")
 label_titulo.config(
     bg="silver",
     height=50,
