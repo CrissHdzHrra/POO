@@ -3,14 +3,12 @@ from model import nota, usuario
 from view import interfaz
 
 class Controlador:
-    #SQL
     @staticmethod
     def respuesta_sql(titulo, respuesta):
         if respuesta:
             messagebox.showinfo(icon="info",title=titulo, message="acción realizada con exito")
         else:
             messagebox.showinfo(icon="info",title=titulo, message="no fue posible realizar la accin, vuelva a intentar")
-    #REGISTRAR
     @staticmethod
     def registrar(nombre, apellidos, email, password):
         if not all([str(nombre).strip(), str(apellidos).strip(), str(email).strip(), password]):
@@ -33,7 +31,6 @@ class Controlador:
         except Exception as e:
             messagebox.showerror(f"error, ocurrió un error al registrar: {e}")
             return False
-    #LOGIN
     @staticmethod
     def login(email, password, ventana):
         if not all([str(email).strip(), password]):
@@ -57,22 +54,18 @@ class Controlador:
         except Exception as e:
             messagebox.showerror(f"error, ha ocurrido un error al iniciar sesión: {e}")
             return None
-    #CREAR NOTAS
     @staticmethod
     def crear_nota(usuario_id,titulo,descripcion):
         respuesta=nota.Nota.crear(usuario_id,titulo,descripcion)
         Controlador.respuesta_sql("Crear Notas", respuesta)
-    #MOSTRAR NOTAS
     @staticmethod
     def mostrar_nota(usuario_id):
         registros=nota.Nota.mostrar(usuario_id)
         return registros
-    #CAMBIAR NOTA
     @staticmethod
     def cambiar_nota(id,titulo,descripcion):
         respuesta=nota.Nota.actualizar(id,titulo,descripcion)
         Controlador.respuesta_sql("Cambiar Notas", respuesta)
-    #ELIMINAR NOTA
     @staticmethod
     def eliminar_nota(id):
         respuesta = nota.Nota.eliminar(id)
