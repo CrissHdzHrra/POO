@@ -174,7 +174,7 @@ class Vistas():
         boton_volver.config()
 
     #Tarea: Actualizar nota y borrar nota
-    #Cambiar notas -PARTE DEL SIMULACRO
+    #Caambiar notas -PARTE DEL SIMULACRO
     @staticmethod
     def cambiar_nota(ventana):
         #borrar ventana
