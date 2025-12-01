@@ -1,7 +1,7 @@
 from tkinter import *
 from controller import controlador
 from tkinter import messagebox
-
+#
 class Vistas():
     def __init__(self,ventana):
         ventana.title("Gestión de Notas")
