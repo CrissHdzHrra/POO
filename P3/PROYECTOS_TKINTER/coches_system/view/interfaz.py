@@ -1,3 +1,5 @@
+#commit_01_12_25
+
 from tkinter import *
 from tkinter import messagebox
 from controller import controlador
@@ -210,3 +212,4 @@ class Interfaces():
         btnBorrar.pack(pady=(50,0))
         btnVolver=Button(ventana, text="Volver", command=lambda: Interfaces.menu_acciones(ventana,titulo))
         btnVolver.pack(pady=(0,50))
+
