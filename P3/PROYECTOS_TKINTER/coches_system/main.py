@@ -1,6 +1,5 @@
 """
 commit_01_12_25
-
 1) Implementacion de MVC
 2) POO
 3) Interfaces:
@@ -23,6 +22,7 @@ if __name__=="__main__":
     ventana=Tk()
     app=App(ventana)
     ventana.mainloop()
+
 
 
 
