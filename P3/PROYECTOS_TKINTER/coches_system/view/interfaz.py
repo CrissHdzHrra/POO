@@ -1,18 +1,26 @@
-#commit_01_12_25
+#commit_03_12_25
 
 from tkinter import *
 from tkinter import messagebox
 from controller import controlador
+"""
+2.1 insertar camiones
+2.2 consultar camiones
+2.3 cambiar camiones
+2.4 borrar camiones
 
+"""
+
+#INTERFAZ O VIEW
 class Interfaces():
     def __init__(self,ventana):
         ventana.title("Gestion de Coches")
-        ventana.geometry("800x800")
+        ventana.geometry("600x600")
         Interfaces.menu_principal(ventana)
     def borrarPantalla(ventana):
         for widget in ventana.winfo_children():
             widget.destroy()
-    #MENU PRINCIPAL
+#MENU PRINCIPAL
     def menu_principal(ventana):
         Interfaces.borrarPantalla(ventana)
         lblTitulo=Label(ventana, text="Sistema de Gestion de Coches")
@@ -25,7 +33,7 @@ class Interfaces():
         btnCamiones.pack(pady=(0,0))
         btnSalir=Button(ventana, text="Salir", command=ventana.quit)
         btnSalir.pack(pady=50)
-    #MENU DE ACCIONES
+#MENU DE ACCIONES
     def menu_acciones(ventana,titulo):
         Interfaces.borrarPantalla(ventana)
         lblTitulo=Label(ventana, text=f"Acciones: {titulo}")
@@ -40,7 +48,7 @@ class Interfaces():
         btnEliminar.pack(pady=(0,0))
         btnVolver=Button(ventana, text="Volver", command=lambda: Interfaces.menu_principal(ventana))
         btnVolver.pack(pady=50)
-    #INSERTAR AUTOS
+#INSERTAR AUTOS
     def insertar_autos(ventana,titulo):
         Interfaces.borrarPantalla(ventana)
         lblTitulo=Label(ventana, text=f"Insertar en {titulo}")
@@ -111,8 +119,56 @@ class Interfaces():
         btnGuardar.pack(pady=(50,0))
         btnVolver=Button(ventana, text="Volver", command=lambda: Interfaces.menu_acciones(ventana,titulo))
         btnVolver.pack(pady=(0,50))
+#INSERTAR CAMIONES
+    def insertar_camiones(ventana, titulo):
+        Interfaces.borrarPantalla(ventana)
+        lblTitulo=Label(ventana, text=f"Insertar en {titulo}")
+        lblTitulo.pack(pady=5)
+        idn=IntVar()
+        lblIDN=Label(ventana, text="ID")
+        txtID=Entry(ventana, textvariable=idn)
+        txtID.focus()
+        lblIDN.pack(pady=(10,0))
+        txtID.pack(pady=(0,0))
+        marca=StringVar()
+        lblMarca=Label(ventana, text="Marca")
+        txtMarca=Entry(ventana, textvariable=marca)
+        txtMarca.focus()
+        lblMarca.pack(pady=(10,0))
+        txtMarca.pack(pady=(0,0))
+        color=StringVar()
+        lblColor=Label(ventana, text="Color")
+        txtColor=Entry(ventana, textvariable=color)
+        txtColor.focus()
+        lblColor.pack(pady=(10,0))
+        txtColor.pack(pady=(0,0))
+        modelo=StringVar()
+        lblModelo=Label(ventana, text="Modelo")
+        txtModelo=Entry(ventana, textvariable=modelo)
+        txtModelo.focus()
+        lblModelo.pack(pady=(10,0))
+        txtModelo.pack(pady=(0,0))
+        velocidad=IntVar()
+        lblVelocidad=Label(ventana, text="Velocidad")
+        txtVelocidad=Entry(ventana, textvariable=velocidad)
+        txtVelocidad.focus()
+        lblVelocidad.pack(pady=(10,0))
+        txtVelocidad.pack(pady=(0,0))
+        btnGuardar=Button(ventana, text="Guardar")
+        btnGuardar.pack(pady=(50,0))
+        btnVolver=Button(ventana, text="Volver", command=lambda: Interfaces.menu_acciones(ventana,titulo))
+        btnVolver.pack(pady=(0,50))
 #CONSULTAR AUTOS
     def consultar_autos(ventana, titulo):
+        Interfaces.borrarPantalla(ventana)
+        lblTitulo=Label(ventana, text=f"Consultas en {titulo}")
+        lblTitulo.pack(pady=5)
+        lblConsultas=Label(ventana, text=f"No hay consultas en este momento dentro de {titulo}")
+        lblConsultas.pack(pady=10)
+        btnVolver=Button(ventana, text="Volver", command=lambda: Interfaces.menu_acciones(ventana,titulo))
+        btnVolver.pack(pady=50)
+#CONSULTAR CAMIONES
+    def consultar_camiones(ventana,titulo):
         Interfaces.borrarPantalla(ventana)
         lblTitulo=Label(ventana, text=f"Consultas en {titulo}")
         lblTitulo.pack(pady=5)
@@ -197,7 +253,46 @@ class Interfaces():
         btnGuardar.pack(pady=(50,0))
         btnVolver=Button(ventana, text="Volver", command=lambda: Interfaces.menu_acciones(ventana,titulo))
         btnVolver.pack(pady=(0,50))
-    
+#CAMBIO DE CAMIONES
+    def cambiar_camiones(ventana,titulo):
+        Interfaces.borrarPantalla(ventana)
+        lblTitulo=Label(ventana, text=f"Cambiar en {titulo}")
+        lblTitulo.pack(pady=5)
+        idn=IntVar()
+        lblIDN=Label(ventana, text="ID")
+        txtID=Entry(ventana, textvariable=idn)
+        txtID.focus()
+        lblIDN.pack(pady=(10,0))
+        txtID.pack(pady=(0,0))
+        marca=StringVar()
+        lblMarca=Label(ventana, text="Marca")
+        txtMarca=Entry(ventana, textvariable=marca)
+        txtMarca.focus()
+        lblMarca.pack(pady=(10,0))
+        txtMarca.pack(pady=(0,0))
+        color=StringVar()
+        lblColor=Label(ventana, text="Color")
+        txtColor=Entry(ventana, textvariable=color)
+        txtColor.focus()
+        lblColor.pack(pady=(10,0))
+        txtColor.pack(pady=(0,0))
+        modelo=StringVar()
+        lblModelo=Label(ventana, text="Modelo")
+        txtModelo=Entry(ventana, textvariable=modelo)
+        txtModelo.focus()
+        lblModelo.pack(pady=(10,0))
+        txtModelo.pack(pady=(0,0))
+        velocidad=IntVar()
+        lblVelocidad=Label(ventana, text="Velocidad")
+        txtVelocidad=Entry(ventana, textvariable=velocidad)
+        txtVelocidad.focus()
+        lblVelocidad.pack(pady=(10,0))
+        txtVelocidad.pack(pady=(0,0))
+        btnGuardar=Button(ventana, text="Guardar")
+        btnGuardar.pack(pady=(50,0))
+        btnVolver=Button(ventana, text="Volver", command=lambda: Interfaces.menu_acciones(ventana,titulo))
+        btnVolver.pack(pady=(0,50))
+#BORRAR AUTOS    
     def borrar_autos(ventana, titulo):
         Interfaces.borrarPantalla(ventana)
         lblTitulo=Label(ventana, text=f"Borrar en {titulo} por ID")
@@ -212,4 +307,18 @@ class Interfaces():
         btnBorrar.pack(pady=(50,0))
         btnVolver=Button(ventana, text="Volver", command=lambda: Interfaces.menu_acciones(ventana,titulo))
         btnVolver.pack(pady=(0,50))
-
+#BORRAR CAMIONES    
+    def borrar_camiones(ventana, titulo):
+        Interfaces.borrarPantalla(ventana)
+        lblTitulo=Label(ventana, text=f"Borrar en {titulo} por ID")
+        lblTitulo.pack(pady=5)
+        idn=IntVar()
+        lblIDN=Label(ventana, text="ID")
+        txtID=Entry(ventana, textvariable=idn)
+        txtID.focus()
+        lblIDN.pack(pady=(10,0))
+        txtID.pack(pady=(0,0))
+        btnBorrar=Button(ventana, text="Borrar")
+        btnBorrar.pack(pady=(50,0))
+        btnVolver=Button(ventana, text="Volver", command=lambda: Interfaces.menu_acciones(ventana,titulo))
+        btnVolver.pack(pady=(0,50))
