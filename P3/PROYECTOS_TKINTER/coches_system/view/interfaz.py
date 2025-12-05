@@ -15,7 +15,8 @@ class Vistas:
         self.ventana = ventana
         self.ventana.title("Coches System")
         self.ventana.geometry("700x600")
-        self.ventana.resizable(False, False)        self.ventana.configure(bg="#F0F8FF") 
+        self.ventana.resizable(False, False)        
+        self.ventana.configure(bg="#F0F8FF") 
         self.menu_principal(self.ventana)
 
     @staticmethod
@@ -450,3 +451,4 @@ if __name__ == "__main__":
             messagebox.showerror("Error", f"Error: {e}")
         except:
             pass
+
